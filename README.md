@@ -1,7 +1,7 @@
 # CryptAPI
 A third-party wrapper for CryptAPI written in golang.
 
-### Examples
+### Ethereum Example
 ```go
 package main
 
@@ -25,8 +25,8 @@ func main() {
 	fmt.Println(info.FeePercent)
 }
 ```
-
-```
+### ERC20 Ticker Example
+```go
 package main
 
 import (
