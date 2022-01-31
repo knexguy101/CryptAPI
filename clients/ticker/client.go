@@ -13,7 +13,7 @@ type TickerClient struct {
 	BaseAPI string
 }
 
-func NewNoTickerClient(coin coins.Coin, ticker tickers.Ticker) *TickerClient {
+func NewTickerClient(coin coins.Coin, ticker tickers.Ticker) *TickerClient {
 	return &TickerClient{
 		Client: &http.Client{
 			Transport: &http.Transport{
