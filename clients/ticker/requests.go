@@ -22,7 +22,7 @@ func (c *TickerClient) Info() (*responses.InfoResponse, *errors.ErrorData) {
 	}
 
 	var obj responses.InfoResponse
-	err = json.Unmarshal(data, &res)
+	err = json.Unmarshal(data, &obj)
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorParsing, err)
 	}
@@ -43,7 +43,7 @@ func (c *TickerClient) Create(address, callback string) (*responses.CreateRespon
 	}
 
 	var obj responses.CreateResponse
-	err = json.Unmarshal(data, &res)
+	err = json.Unmarshal(data, &obj)
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorParsing, err)
 	}
@@ -64,7 +64,7 @@ func (c *TickerClient) QRCode(address string) (*responses.QRCodeResponse, *error
 	}
 
 	var obj responses.QRCodeResponse
-	err = json.Unmarshal(data, &res)
+	err = json.Unmarshal(data, &obj)
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorParsing, err)
 	}
@@ -85,7 +85,7 @@ func (c *TickerClient) Estimate() (*responses.EstimateResponse, *errors.ErrorDat
 	}
 
 	var obj responses.EstimateResponse
-	err = json.Unmarshal(data, &res)
+	err = json.Unmarshal(data, &obj)
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorParsing, err)
 	}
@@ -106,7 +106,7 @@ func (c *TickerClient) Convert(value, from string) (*responses.ConvertResponse, 
 	}
 
 	var obj responses.ConvertResponse
-	err = json.Unmarshal(data, &res)
+	err = json.Unmarshal(data, &obj)
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorParsing, err)
 	}
@@ -127,7 +127,7 @@ func (c *TickerClient) Logs(callback string) (*responses.PaymentLogsResponse, *e
 	}
 
 	var obj responses.PaymentLogsResponse
-	err = json.Unmarshal(data, &res)
+	err = json.Unmarshal(data, &obj)
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorParsing, err)
 	}

@@ -3,16 +3,13 @@ package responses
 import "time"
 
 type InfoResponse struct {
-	Coin                   string `json:"coin"`
-	Logo                   string `json:"logo"`
-	Ticker                 string `json:"ticker"`
-	MinimumTransaction     int64  `json:"minimum_transaction"`
-	MinimumTransactionCoin string `json:"minimum_transaction_coin"`
-	MinimumFee             int64  `json:"minimum_fee"`
-	MinimumFeeCoin         string `json:"minimum_fee_coin"`
-	FeePercent             string `json:"fee_percent"`
-	Status                 string `json:"status"`
-	Prices                 struct {
+	Coin               string    `json:"coin"`
+	MinimumTransaction float64    `json:"minimum_transaction"`
+	MinimumFee         float64    `json:"minimum_fee"`
+	FeePercent         string    `json:"fee_percent"`
+	PricesUpdated      time.Time `json:"prices_updated"`
+	Status             string    `json:"status"`
+	Prices             struct {
 		Usd string `json:"USD"`
 		Eur string `json:"EUR"`
 		Gbp string `json:"GBP"`
@@ -33,5 +30,4 @@ type InfoResponse struct {
 		Bgn string `json:"BGN"`
 		Ron string `json:"RON"`
 	} `json:"prices"`
-	PricesUpdated time.Time `json:"prices_updated"`
 }
