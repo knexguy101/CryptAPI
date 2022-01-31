@@ -1,7 +1,7 @@
 package noticker
 
 import (
-	"cryptAPI/tokens/coins"
+	"github.com/knexguy101/CryptAPI/tokens/coins"
 	"net/http"
 )
 

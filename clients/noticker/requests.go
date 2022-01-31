@@ -1,10 +1,10 @@
 package noticker
 
 import (
-	"cryptAPI/clients/responses"
-	"cryptAPI/errors"
 	"encoding/json"
 	"fmt"
+	"github.com/knexguy101/CryptAPI/clients/responses"
+	"github.com/knexguy101/CryptAPI/errors"
 	"io"
 	"net/url"
 )

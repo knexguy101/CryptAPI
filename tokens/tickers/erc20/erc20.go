@@ -1,6 +1,6 @@
 package erc20
 
-import "cryptAPI/tokens/tickers"
+import "github.com/knexguy101/CryptAPI/tokens/tickers"
 
 type ERC20Ticker tickers.Ticker
 

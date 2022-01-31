@@ -1,8 +1,8 @@
 package ticker
 
 import (
-	"cryptAPI/tokens/coins"
-	"cryptAPI/tokens/tickers"
+	"github.com/knexguy101/CryptAPI/tokens/coins"
+	"github.com/knexguy101/CryptAPI/tokens/tickers"
 	"net/http"
 )
 

@@ -1,6 +1,6 @@
 package bep20
 
-import "cryptAPI/tokens/tickers"
+import "github.com/knexguy101/CryptAPI/tokens/tickers"
 
 type BEP20Ticker tickers.Ticker
 

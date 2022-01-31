@@ -1,6 +1,6 @@
 package trc20
 
-import "cryptAPI/tokens/tickers"
+import "github.com/knexguy101/CryptAPI/tokens/tickers"
 
 type TRC20Ticker tickers.Ticker
 
