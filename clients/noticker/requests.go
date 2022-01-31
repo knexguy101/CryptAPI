@@ -10,7 +10,7 @@ import (
 )
 
 func (c *NoTickerClient) Info() (*responses.InfoResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/info", c.BaseAPI, c.Coin))
+	res, err := c.get(fmt.Sprintf("%s/%s/info/", c.BaseAPI, c.Coin))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -31,7 +31,7 @@ func (c *NoTickerClient) Info() (*responses.InfoResponse, *errors.ErrorData) {
 }
 
 func (c *NoTickerClient) Create(address, callback string) (*responses.CreateResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/create?callback=%s&address=%s", c.BaseAPI, c.Coin, url.QueryEscape(callback), address))
+	res, err := c.get(fmt.Sprintf("%s/%s/create/?callback=%s&address=%s", c.BaseAPI, c.Coin, url.QueryEscape(callback), address))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -52,7 +52,7 @@ func (c *NoTickerClient) Create(address, callback string) (*responses.CreateResp
 }
 
 func (c *NoTickerClient) QRCode(address string) (*responses.QRCodeResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/qrcode?address=%s", c.BaseAPI, c.Coin, address))
+	res, err := c.get(fmt.Sprintf("%s/%s/qrcode/?address=%s", c.BaseAPI, c.Coin, address))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -73,7 +73,7 @@ func (c *NoTickerClient) QRCode(address string) (*responses.QRCodeResponse, *err
 }
 
 func (c *NoTickerClient) Estimate() (*responses.EstimateResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/estimate", c.BaseAPI, c.Coin))
+	res, err := c.get(fmt.Sprintf("%s/%s/estimate/", c.BaseAPI, c.Coin))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -94,7 +94,7 @@ func (c *NoTickerClient) Estimate() (*responses.EstimateResponse, *errors.ErrorD
 }
 
 func (c *NoTickerClient) Convert(value, from string) (*responses.ConvertResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/convert?value=%s&from=%s", c.BaseAPI, c.Coin, value, from))
+	res, err := c.get(fmt.Sprintf("%s/%s/convert/?value=%s&from=%s", c.BaseAPI, c.Coin, value, from))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -115,7 +115,7 @@ func (c *NoTickerClient) Convert(value, from string) (*responses.ConvertResponse
 }
 
 func (c *NoTickerClient) Logs(callback string) (*responses.PaymentLogsResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/logs?callback=%s", c.BaseAPI, c.Coin, callback))
+	res, err := c.get(fmt.Sprintf("%s/%s/logs/?callback=%s", c.BaseAPI, c.Coin, callback))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}

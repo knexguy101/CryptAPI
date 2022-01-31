@@ -10,7 +10,7 @@ import (
 )
 
 func (c *TickerClient) Info() (*responses.InfoResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/%s/info", c.BaseAPI, c.Coin, c.Ticker))
+	res, err := c.get(fmt.Sprintf("%s/%s/%s/info/", c.BaseAPI, c.Coin, c.Ticker))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -31,7 +31,7 @@ func (c *TickerClient) Info() (*responses.InfoResponse, *errors.ErrorData) {
 }
 
 func (c *TickerClient) Create(address, callback string) (*responses.CreateResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/%s/create?callback=%s&address=%s", c.BaseAPI, c.Coin, c.Ticker, url.QueryEscape(callback), address))
+	res, err := c.get(fmt.Sprintf("%s/%s/%s/create/?callback=%s&address=%s", c.BaseAPI, c.Coin, c.Ticker, url.QueryEscape(callback), address))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -52,7 +52,7 @@ func (c *TickerClient) Create(address, callback string) (*responses.CreateRespon
 }
 
 func (c *TickerClient) QRCode(address string) (*responses.QRCodeResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/%s/qrcode?address=%s", c.BaseAPI, c.Coin, c.Ticker, address))
+	res, err := c.get(fmt.Sprintf("%s/%s/%s/qrcode/?address=%s", c.BaseAPI, c.Coin, c.Ticker, address))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -73,7 +73,7 @@ func (c *TickerClient) QRCode(address string) (*responses.QRCodeResponse, *error
 }
 
 func (c *TickerClient) Estimate() (*responses.EstimateResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/%s/estimate", c.BaseAPI, c.Coin, c.Ticker))
+	res, err := c.get(fmt.Sprintf("%s/%s/%s/estimate/", c.BaseAPI, c.Coin, c.Ticker))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -94,7 +94,7 @@ func (c *TickerClient) Estimate() (*responses.EstimateResponse, *errors.ErrorDat
 }
 
 func (c *TickerClient) Convert(value, from string) (*responses.ConvertResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/%s/convert?value=%s&from=%s", c.BaseAPI, c.Coin, c.Ticker, value, from))
+	res, err := c.get(fmt.Sprintf("%s/%s/%s/convert/?value=%s&from=%s", c.BaseAPI, c.Coin, c.Ticker, value, from))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
@@ -115,7 +115,7 @@ func (c *TickerClient) Convert(value, from string) (*responses.ConvertResponse, 
 }
 
 func (c *TickerClient) Logs(callback string) (*responses.PaymentLogsResponse, *errors.ErrorData) {
-	res, err := c.get(fmt.Sprintf("%s/%s/%s/logs?callback=%s", c.BaseAPI, c.Coin, c.Ticker, callback))
+	res, err := c.get(fmt.Sprintf("%s/%s/%s/logs/?callback=%s", c.BaseAPI, c.Coin, c.Ticker, callback))
 	if err != nil {
 		return nil, errors.NewErrorData(errors.ErrorRequest, err)
 	}
