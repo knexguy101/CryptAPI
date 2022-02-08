@@ -30,7 +30,7 @@ type Callbacks struct {
 	Confirmations      int     `json:"confirmations"`
 	LastUpdate         string  `json:"last_update"`
 	Result             string  `json:"result"`
-	FeePercent         int     `json:"fee_percent"`
+	FeePercent         string    `json:"fee_percent"`
 	Fee                int64   `json:"fee"`
 	Logs               []Logs  `json:"logs"`
 }
