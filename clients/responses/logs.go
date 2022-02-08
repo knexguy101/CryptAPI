@@ -24,9 +24,9 @@ type Callbacks struct {
 	TxidIn             string  `json:"txid_in"`
 	TxidOut            string  `json:"txid_out"`
 	Value              int64   `json:"value"`
-	ValueCoin          float64 `json:"value_coin"`
+	ValueCoin          string `json:"value_coin"`
 	ValueForwarded     int64   `json:"value_forwarded"`
-	ValueForwardedCoin float64 `json:"value_forwarded_coin"`
+	ValueForwardedCoin string `json:"value_forwarded_coin"`
 	Confirmations      int     `json:"confirmations"`
 	LastUpdate         string  `json:"last_update"`
 	Result             string  `json:"result"`
